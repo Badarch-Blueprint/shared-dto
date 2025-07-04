@@ -1,6 +1,6 @@
 {
   "name": "@munshy/shared-dtos",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Munshy's shared DTOs for NestJS and Angular applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
