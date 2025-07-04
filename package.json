@@ -1,0 +1,31 @@
+{
+  "name": "@munshy/shared-dtos",
+  "version": "1.1.1",
+  "description": "Munshy's shared DTOs for NestJS and Angular applications",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "version:patch": "npm version patch && npm run build && npm publish",
+    "version:minor": "npm version minor && npm run build && npm publish",
+    "version:major": "npm version major && npm run build && npm publish"
+  },
+  "keywords": [
+    "dto",
+    "typescript",
+    "nestjs",
+    "angular"
+  ],
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
+}
