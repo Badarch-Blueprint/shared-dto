@@ -12,4 +12,4 @@ export class LoginUserDto {
 export class AdminLoginUserDto {
     readonly username!: string;
     readonly password!: string;
-}
+}// Test comment
