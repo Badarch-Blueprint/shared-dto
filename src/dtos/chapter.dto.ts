@@ -12,6 +12,13 @@ export class ChaptersQueryDto extends PaginationDto {
   readonly access_type?: AccessType;
 }
 
+export class ChaptersUniversalQueryDto {
+  readonly filters?: string; // JSON stringified array of filter conditions
+  readonly sort?: string; // JSON stringified sort object
+  readonly page?: number = 1;
+  readonly limit?: number = 10;
+}
+
 export class ChapterResponseDto {
   readonly chapter_id!: number;
   readonly manga_id!: number;
