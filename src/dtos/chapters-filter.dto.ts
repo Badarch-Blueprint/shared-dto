@@ -1,6 +1,17 @@
 import { FilterFieldConfig, FilterFieldType, AdvancedFilterConfig } from './filter-field.dto';
 import { AccessType } from './chapter.dto';
 
+export class ChaptersFilterDto {
+  readonly search?: string;
+  readonly access_type?: AccessType;
+  readonly is_published?: boolean;
+  readonly chapter_number?: number;
+  readonly page_count?: number;
+  readonly coin_cost?: number;
+  readonly release_date?: string;
+  readonly created_at?: string;
+}
+
 export const CHAPTERS_FILTER_CONFIG: AdvancedFilterConfig = {
   collapsed: true,
   showClearAll: true,
