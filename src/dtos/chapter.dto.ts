@@ -51,6 +51,7 @@ export class PageMetadataDto {
 }
 
 export class CreateChapterDto {
+  
   @IsInt()
   @Type(() => Number)
   manga_id!: number;
