@@ -1,7 +1,7 @@
 import { PaginationDto, PaginatedResponse } from './pagination.dto';
 import { IsString, IsInt, IsOptional, IsEnum, IsBoolean, IsArray, ValidateNested, IsDateString } from 'class-validator';
 import { Type } from 'class-transformer';
-import { PartialType } from '@nestjs/mapped-types';
+import { PartialType } from './partial.type';
 
 export enum AccessType {
   FREE = 'free',
@@ -89,4 +89,4 @@ export class CreateChapterDto {
   pages?: PageMetadataDto[];
 }
 
-export class UpdateChapterDto extends PartialType(CreateChapterDto) {} 
+export type UpdateChapterDto = Partial<CreateChapterDto>;
