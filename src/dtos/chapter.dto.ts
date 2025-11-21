@@ -1,7 +1,4 @@
 import { PaginationDto, PaginatedResponse } from './pagination.dto';
-import { IsString, IsInt, IsOptional, IsEnum, IsBoolean, IsArray, ValidateNested, IsDateString } from 'class-validator';
-import { Type } from 'class-transformer';
-import { PartialType } from './partial.type';
 
 export enum AccessType {
   FREE = 'free',
@@ -41,52 +38,30 @@ export class ChapterResponseDto {
 export interface ChaptersResponseDto extends PaginatedResponse<ChapterResponseDto> {}
 
 export class PageMetadataDto {
-  @IsOptional()
-  @IsString()
   alt_text?: string;
-
-  @IsOptional()
-  @IsInt()
   page_number?: number;
 }
 
 export class CreateChapterDto {
-  @IsInt()
-  @Type(() => Number)
   manga_id!: number;
-
-  @IsInt()
-  @Type(() => Number)
   chapter_number!: number;
-
-  @IsOptional()
-  @IsString()
   title?: string;
-
-  @IsOptional()
-  @IsString()
   description?: string;
-
-  @IsEnum(AccessType)
   access_type!: AccessType;
-
-  @IsInt()
-  @Type(() => Number)
   coin_cost!: number;
-
-  @IsOptional()
-  @IsDateString()
   release_date?: Date;
-
-  @IsBoolean()
-  @Type(() => Boolean)
   is_published!: boolean;
-
-  @IsOptional()
-  @IsArray()
-  @ValidateNested({ each: true })
-  @Type(() => PageMetadataDto)
   pages?: PageMetadataDto[];
 }
 
-export type UpdateChapterDto = Partial<CreateChapterDto>;
+export class UpdateChapterDto {
+  manga_id?: number;
+  chapter_number?: number;
+  title?: string;
+  description?: string;
+  access_type?: AccessType;
+  coin_cost?: number;
+  release_date?: Date;
+  is_published?: boolean;
+  pages?: PageMetadataDto[];
+}
